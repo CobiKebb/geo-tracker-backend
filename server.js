@@ -13,6 +13,7 @@ app.post('/log', (req, res) => {
     ...req.body
   };
 
+  console.log("Position reçue :", logEntry); // 👈 Ajout pour les logs Render
   fs.appendFile('logs.txt', JSON.stringify(logEntry) + '\n', err => {
     if (err) {
       console.error(err);
